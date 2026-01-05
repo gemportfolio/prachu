@@ -1,0 +1,331 @@
+@import url('fonts/Melodrama_Complete/css/melodrama.css');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box !important;
+}
+
+* {
+    transition: all 0.44s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+	--colBlack: #0f0f0f;
+	--colWhite: #fff;
+
+    --colDarkNeutral: #1F2933;
+    --colLightNeutral: #F6F1EC;
+    --colDeepBlue: #0B3C5D;
+    --colOrange: #F28C28;
+    --colSoftGold: #C9A24D;
+
+    --fontMelodramaReg: "Melodrama-Regular", sans-serif;
+    --fontOutfit: "Outfit", sans-serif;
+}
+
+body {
+	overflow-x: hidden !important;
+    margin: 0;
+    padding: 0;
+    background-color: var(--colLightNeutral);
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, li, a, button {
+    font-family: var(--fontOutfit);
+}
+
+
+/* CUSTOM SUPPORT CLASSES */
+.bg-lightneutral,
+.bg-lightneutral-hover:hover {
+    background-color: var(--colLightNeutral);
+}
+.col-lightneutral,
+.col-lightneutral-hover:hover {
+    color: var(--colLightNeutral);
+}
+.border-lightneutral {
+    border: solid 1px var(--colLightNeutral);
+}
+
+.bg-darkneutral,
+.bg-darkneutral-hover:hover {
+    background-color: var(--colDarkNeutral);
+}
+.col-darkneutral,
+.col-darkneutral-hover:hover {
+    color: var(--colDarkNeutral);
+}
+.border-darkneutral {
+    border: solid 1px var(--colDarkNeutral);
+}
+
+.bg-deepblue,
+.bg-deepblue-hover:hover {
+    background-color: var(--colDeepBlue);
+}
+.col-deepblue,
+.col-deepblue-hover:hover {
+    color: var(--colDeepBlue);
+}
+.border-deepblue {
+    border: solid 1px #0b3c5d44;
+}
+
+.bg-orange,
+.bg-orange-hover:hover {
+    background-color: var(--colOrange);
+}
+.col-orange,
+.col-orange-hover:hover {
+    color: var(--colOrange);
+}
+.border-orange,
+.border-orange-hover:hover {
+    border: solid 1px #F28C2844;
+}
+
+.width-fit-content {
+    width: fit-content;
+}
+
+.letter-spacing {
+  letter-spacing: 0.08em;
+}
+
+
+/* NAVBAR */
+.navbar {
+    background-color: #F6F1EC55;
+    backdrop-filter: blur(44px);
+    -webkit-backdrop-filter: blur(72px);
+    border-bottom: solid 1px #58585820;
+}
+
+.navbar .navbar-brand span {
+    font-family: "Melodrama-Medium", sans-serif;
+}
+.navbar .navbar-brand img {
+    width: 44px;
+}
+
+.nav-link {
+    font-size: 18px;
+    color: var(--colDeepBlue);
+}
+.nav-link:hover {
+    color: var(--colDeepBlue);
+    transition: all 0.12s;
+}
+@media screen and (min-width: 992px) {
+	a.uline {
+		position: relative;
+		text-decoration: none;
+	}
+	a.uline::after {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 2px;
+		left: 0;
+		bottom: 8px;
+		background-color: var(--colDeepBlue);
+		transition: width 0.4s ease;
+	}
+	a.uline:hover::after {
+		width: 100%;
+	}
+}
+
+
+/* HERO */
+.hero .tag-pub {
+    height: 2rem;
+    border: solid 1px #0b3c5d20;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 1000;
+}
+
+.hero .svg-underline {
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 85%;
+    height: 0.75rem;
+    color: #0b3c5d55;
+    z-index: -10;
+}
+
+.hero .svg-underline path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 8;
+}
+
+@media screen and (max-width: 532px) {
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+    .hero .svg-underline {
+        width: 92%;
+    }
+}
+@media screen and (max-width: 430px) {
+    .hero h1 {
+        font-size: 2.64rem;
+    }
+    h1 {
+        font-size: 2.44rem;
+    }
+    .hero .svg-underline {
+        width: 98%;
+    }
+}
+
+.hero .subtext {
+    font-size: 1.36rem;
+    width: 80%;
+}
+@media screen and (max-width: 563px) {
+    .hero .subtext {
+        width: 100%;
+    }
+}
+
+.hero .avatar-group {
+    display: flex;
+}
+
+.hero .avatar-group img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    margin-left: -12px;
+}
+
+.hero .avatar-group img:first-child {
+    margin-left: 0;
+}
+
+
+/* CTA 1 SECTION */
+.cta1-section {
+  min-height: 64vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url("img/cta-bg1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+  align-items: center;
+}
+
+.cta1-section .container {
+  padding: 1.4rem;
+  max-width: 800px;
+}
+
+
+/* ABOUT SECTION */
+.about .rt hr {
+    border: solid 1px var(--colDeepBlue);
+    width: 120px;
+}
+
+.about .rt > * {
+    width: 80%;
+    text-align: justify;
+}
+
+
+/* WORKS CAROUSEL */
+.works-carousel .my-slide {
+    width: 320px;
+}
+
+
+/* FOOTER */
+.footer {
+    background-color: #efefef20;
+    color: var(--colDarkNeutral);
+    border-top: solid 1px #58585820;
+}
+
+
+/******* CARDS ******/
+/* SERVICE CARDS */
+.service-card {
+    border: 1px solid #0B3C5D55;
+    transition: all 0.3s ease;
+    padding: 36px;
+    height: 100%;
+    background-color: var(--colWhite);
+}
+
+.service-card:hover {
+    border-color: #0B3C5D55 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Icon box */
+.service-card .icon-box {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: #f8f9fa;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .icon-box {
+    transform: scale(1.1);
+}
+
+
+/****** BUTTON STYLES ******/
+.btn-alt {
+    padding: 14px 28px;
+}
+
+/****** CUSTOM TRANSITIONS ******/
+.icon-wrap {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.icon {
+  position: absolute;
+  inset: 0;
+  transition: all 0.64s ease;
+}
+
+.icon-hover {
+  opacity: 0;
+  transform: translate(-12px, 12px);
+}
+
+.btn-alt:hover .icon-default {
+  opacity: 0;
+  transform: translate(12px, -12px);
+}
+
+.btn-alt:hover .icon-hover {
+  opacity: 1;
+  transform: translate(0, 0);
+}
