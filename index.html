@@ -23,8 +23,6 @@
 		>
 
         <!-- STYLESHEETS -->
-        <link rel="stylesheet" href="slick-1.8.1/slick/slick.css">
-        <link rel="stylesheet" href="slick-1.8.1/slick/slick-theme.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scroll-carousel@1.2.7/dist/scroll.carousel.min.css" />
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 		
@@ -194,7 +192,7 @@
 		</section>
 
         <!-- SERVICES -->
-        <section class="services py-5 border-top border-deepblue" id="services">
+        <section class="services py-5 border-top border-deepblue" id="services" style="scroll-margin-top: 32px;">
             <div class="container py-5">
                 <div class="row text-center" data-aos="flip-left" data-aos-once="true">
                     <p class="fw-semibold col-orange text-uppercase mb-1 small" style="letter-spacing: 2px;">Services Offered</p>
@@ -253,7 +251,7 @@
         </section>
 
         <!-- SELECTED WORKS CAROUSEL -->
-        <section class="bg-deepblue" style="padding: 72px 0 92px 0;" id="works">
+        <section class="bg-deepblue" style="padding: 72px 0 92px 0; scroll-margin-top: 64px;" id="works">
             <div class="pb-4 px-3 px-md-0 pb-3 text-center" data-aos="flip-left" data-aos-once="true" data-aos-duration="1000">
                 <h1 class="fw-bold col-orange">Some Selected Works</h1>
             </div>
@@ -307,7 +305,7 @@
         </section>
 
         <!-- ABOUT -->
-        <section class="about border-bottom border-deepblue" id="about">
+        <section class="about border-bottom border-deepblue" id="about" style="scroll-margin-top: 72px;">
             <div class="container-fluid px-0">
                 <div class="row">
                     <div class="col-lg-6">
@@ -335,7 +333,7 @@
         </section>
 
         <!-- CONTACT -->
-        <section class="py-5" id="contact">
+        <section class="py-5" id="contact" style="scroll-margin-top: 44px;">
             <div class="container py-5 px-4 px-sm-0">
                 <div class="row text-center mb-4" data-aos="fade-down" data-aos-once="true" data-aos-duration="1800">
                     <h1 class="col-deepblue">Let's Create Something Together</h1>
@@ -549,6 +547,23 @@
               backSpeed: 40,
               loop: true
             });  
+
+            // Navbar Collapse for Link Click
+            document.addEventListener("DOMContentLoaded", function () {
+                const navLinks = document.querySelectorAll(".navbar-collapse .nav-link");
+                const navbarCollapse = document.querySelector(".navbar-collapse");
+
+                navLinks.forEach(function (link) {
+                link.addEventListener("click", function () {
+                    if (navbarCollapse.classList.contains("show")) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                        toggle: true
+                    });
+                    bsCollapse.hide();
+                    }
+                });
+                });
+            });
         </script> 
 
         <script>
